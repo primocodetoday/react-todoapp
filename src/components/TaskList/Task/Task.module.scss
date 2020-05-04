@@ -1,0 +1,50 @@
+﻿.singleTask {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0;
+  font-size: 0.85rem;
+
+  .taskText,
+  .taskDate {
+    flex-basis: 30%;
+    margin: 5px 0;
+  }
+
+  .taskDate {
+    font-size: 0.8rem;
+  }
+
+  .taskImportant {
+    flex-basis: 10%;
+    margin: 5px 5px;
+  }
+
+  .doneButton,
+  .deleteButton {
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .doneButton {
+    background-color: rgb(248, 177, 83);
+  }
+
+  .deleteButton {
+    margin-left: 20px;
+    color: rgba(58, 58, 58, 0.61);
+    background-color: lightsalmon;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .doneButton:hover,
+  .deleteButton:hover {
+    box-shadow: 0 0 10px -3px rgb(112, 112, 112);
+  }
+}
