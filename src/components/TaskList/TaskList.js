@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import PropTypes from 'prop-types';
-import Task from './Task/Task';
-import styles from './TaskList.module.scss';
+import { List, Typography } from '@material-ui/core';
+import { Task } from '..';
 
 const TaskList = ({ taskList, changeActive, deleteTask }) => {
   const activeTasks = taskList.filter((task) => task.active);
@@ -35,24 +35,28 @@ const TaskList = ({ taskList, changeActive, deleteTask }) => {
   ));
 
   return (
-    <div className={styles.taskListwrapper}>
-      <div className={styles.todolist}>
-        <h4>Tasks to be done ({activeList.length})</h4>
+    <List>
+      <div>
+        <Typography variant="h5" align="center" gutterBottom>
+          Tasks to be done ({activeList.length})
+        </Typography>
         {activeList.length > 0 ? (
           activeList
         ) : (
           <p>Nothing to do. Go for coffee.</p>
         )}
       </div>
-      <div className={styles.dotted}>...</div>
-      <div className={styles.doneList}>
-        <h4>Tasks done ({doneList.length})</h4>
+      <div>...</div>
+      <div>
+        <Typography variant="h5" align="center" gutterBottom>
+          Tasks done ({doneList.length})
+        </Typography>
         {doneList.length > 5 && (
           <p>The list contains the last 5 completed tasks</p>
         )}
         {doneList.slice(0, 5)}
       </div>
-    </div>
+    </List>
   );
 };
 
