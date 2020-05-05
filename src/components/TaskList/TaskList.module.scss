@@ -1,0 +1,27 @@
+﻿.taskListwrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.todolist,
+.doneList,
+.dotted {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dotted {
+  margin: 0 auto;
+  width: 30px;
+  color: rgb(255, 255, 255);
+  font-size: 50px;
+  line-height: 25px;
+}
+
+.todolist,
+.doneList {
+  width: 100%;
+}

@@ -1,7 +1,6 @@
 ﻿import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, ListItem, ListItemText, IconButton } from '@material-ui/core';
-import { Delete } from '@material-ui/icons';
+import styles from './Task.module.scss';
 
 const Task = ({ item, changeActive, deleteTask }) => {
   const { id, text, date, important, active, finishDate } = item;
@@ -9,8 +8,8 @@ const Task = ({ item, changeActive, deleteTask }) => {
   const finish = new Date(finishDate).toLocaleDateString();
 
   return (
-    <ListItem>
-      <ListItemText
+    <div className={styles.singleTask}>
+      <p
         style={
           important
             ? {
@@ -19,23 +18,30 @@ const Task = ({ item, changeActive, deleteTask }) => {
               }
             : null
         }
+        className={styles.taskText}
       >
         {important ? `${text} !!!` : text}
-      </ListItemText>
-      <p>{finish !== '1.01.1970' ? finish : date}</p>
+      </p>
+      <p className={styles.taskDate}>
+        {finish !== '1.01.1970' ? finish : date}
+      </p>
       {active && (
-        <Button
-          color="primary"
-          variant="contained"
+        <button
+          type="button"
           onClick={() => changeActive(id)}
+          className={styles.doneButton}
         >
           Done
-        </Button>
+        </button>
       )}
-      <IconButton color="secondary" onClick={() => deleteTask(id)}>
-        <Delete />
-      </IconButton>
-    </ListItem>
+      <button
+        type="button"
+        onClick={() => deleteTask(id)}
+        className={styles.deleteButton}
+      >
+        X
+      </button>
+    </div>
   );
 };
 

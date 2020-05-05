@@ -1,6 +1,6 @@
 ﻿import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Grid } from '@material-ui/core';
+import styles from './AddTask.module.scss';
 
 const AddTask = ({ addSingleTask }) => {
   const minDate = new Date().toISOString().slice(0, 10);
@@ -50,7 +50,7 @@ const AddTask = ({ addSingleTask }) => {
   };
 
   return (
-    <Grid item>
+    <div className={styles.form}>
       <div>
         <label htmlFor="addTask">
           name:{' '}
@@ -79,11 +79,11 @@ const AddTask = ({ addSingleTask }) => {
           max={maxDate}
           onChange={handleChangeDate}
         />
-        <Button variant="contained" color="primary" onClick={handleClick}>
+        <button type="button" onClick={handleClick}>
           Add
-        </Button>
+        </button>
       </div>
-    </Grid>
+    </div>
   );
 };
 

@@ -1,11 +1,35 @@
-import React, { useState, useEffect } from 'react';
-import { CssBaseline, Grid, Container } from '@material-ui/core';
-import { AddTask, TaskList } from '.';
-import { Header, Footer } from '../layouts';
-import todos from '../store/baseTaskList';
+﻿import React, { useState, useEffect } from 'react';
+import AddTask from './AddTask/AddTask';
+import styles from './ToDoApp.module.scss';
+import TaskList from './TaskList/TaskList';
 
 const ToDoApp = () => {
-  const [state, setState] = useState(todos);
+  const [state, setState] = useState([
+    {
+      id: 1,
+      text: 'React Redux Practice',
+      date: '2020-05-05',
+      important: false,
+      active: true,
+      finishDate: null,
+    },
+    {
+      id: 2,
+      text: 'Vue Routing',
+      date: '2020-05-10',
+      important: false,
+      active: true,
+      finishDate: null,
+    },
+    {
+      id: 3,
+      text: 'Finish portfolio',
+      date: '2020-05-15',
+      important: true,
+      active: true,
+      finishDate: null,
+    },
+  ]);
 
   const localStorageAdd = (key, result) => {
     localStorage.setItem(key, JSON.stringify(result));
@@ -61,29 +85,15 @@ const ToDoApp = () => {
   }, [state]);
 
   return (
-    <>
-      <CssBaseline />
-      <Container maxWidth="lg">
-        <Header />
-        <Grid
-          spacing={1}
-          container
-          direction="column"
-          justify="flex-start"
-          alignItems="center"
-          style={{ marginTop: 15 }}
-        >
-          <AddTask addSingleTask={addSingleTask} />
-          <TaskList
-            taskList={state}
-            deleteTask={handleDeleteTask}
-            changeActive={handleChangeActive}
-          />
-        </Grid>
-
-        <Footer />
-      </Container>
-    </>
+    <div className={styles.mainWrapper}>
+      <h2 className={styles.title}>Another To Do App</h2>
+      <AddTask addSingleTask={addSingleTask} />
+      <TaskList
+        taskList={state}
+        deleteTask={handleDeleteTask}
+        changeActive={handleChangeActive}
+      />
+    </div>
   );
 };
 

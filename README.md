@@ -1,7 +1,8 @@
 <h1 align="center">
 <br>
-<p align="center">
-</p>
+<!-- <p align="center">
+<img src="https://i.imgur.com/mH3UlQB.jpg"  alt="Logo">
+</p> -->
 
 </h1>
 
@@ -26,7 +27,6 @@
 | Tech                                                             |
 | ---------------------------------------------------------------- |
 | [Create React App](https://github.com/facebook/create-react-app) |
-| [Material-UI](https://material-ui.com/)                          |
 
 <!-- ## Screenshots 📺
 
@@ -53,8 +53,8 @@
 | `npm run start` | Open local server      |
 | `npm run build` | Create optimized build |
 
-<!-- ### Live 📍
+### Live 📍
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8af0f95f-6546-4192-b858-ba6ffcb01cbd/deploy-status)](https://primoza.netlify.app/)
 
-### License 🔱 -->
+### License 🔱
