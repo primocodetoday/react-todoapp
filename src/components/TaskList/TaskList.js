@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import PropTypes from 'prop-types';
-import { List, Typography } from '@material-ui/core';
-import { Task } from '..';
+import { List, Typography, Grid } from '@material-ui/core';
+import Task from '../Task/Task';
 
 const TaskList = ({ taskList, changeActive, deleteTask }) => {
   const activeTasks = taskList.filter((task) => task.active);
@@ -35,8 +35,8 @@ const TaskList = ({ taskList, changeActive, deleteTask }) => {
   ));
 
   return (
-    <List>
-      <div>
+    <Grid item>
+      <List>
         <Typography variant="h5" align="center" gutterBottom>
           Tasks to be done ({activeList.length})
         </Typography>
@@ -45,9 +45,8 @@ const TaskList = ({ taskList, changeActive, deleteTask }) => {
         ) : (
           <p>Nothing to do. Go for coffee.</p>
         )}
-      </div>
-      <div>...</div>
-      <div>
+      </List>
+      <List>
         <Typography variant="h5" align="center" gutterBottom>
           Tasks done ({doneList.length})
         </Typography>
@@ -55,8 +54,8 @@ const TaskList = ({ taskList, changeActive, deleteTask }) => {
           <p>The list contains the last 5 completed tasks</p>
         )}
         {doneList.slice(0, 5)}
-      </div>
-    </List>
+      </List>
+    </Grid>
   );
 };
 

@@ -1,4 +1,5 @@
-﻿export { default as AddTask } from './AddTask/AddTask';
-export { default as Task } from './Task/Task';
-// eslint-disable-next-line import/no-cycle
-export { default as TaskList } from './TaskList/TaskList';
+﻿import AddTask from './AddTask/AddTask';
+import Task from './Task/Task';
+import TaskList from './TaskList/TaskList';
+
+export { AddTask, Task, TaskList };

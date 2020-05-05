@@ -1,6 +1,6 @@
 ﻿import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Button } from '@material-ui/core';
+import { Button, Grid } from '@material-ui/core';
 
 const AddTask = ({ addSingleTask }) => {
   const minDate = new Date().toISOString().slice(0, 10);
@@ -50,7 +50,7 @@ const AddTask = ({ addSingleTask }) => {
   };
 
   return (
-    <div>
+    <Grid item>
       <div>
         <label htmlFor="addTask">
           name:{' '}
@@ -83,7 +83,7 @@ const AddTask = ({ addSingleTask }) => {
           Add
         </Button>
       </div>
-    </div>
+    </Grid>
   );
 };
 

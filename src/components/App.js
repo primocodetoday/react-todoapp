@@ -1,34 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { CssBaseline, Typography } from '@material-ui/core';
-import { AddTask, TaskList } from './components';
+import { CssBaseline, Grid, Container } from '@material-ui/core';
+import { AddTask, TaskList } from '.';
+import { Header, Footer } from '../layouts';
+import todos from '../store/baseTaskList';
 
 const ToDoApp = () => {
-  const [state, setState] = useState([
-    {
-      id: 1,
-      text: 'React Redux Practice',
-      date: '2020-05-05',
-      important: false,
-      active: true,
-      finishDate: null,
-    },
-    {
-      id: 2,
-      text: 'Vue Routing',
-      date: '2020-05-10',
-      important: false,
-      active: true,
-      finishDate: null,
-    },
-    {
-      id: 3,
-      text: 'Finish portfolio',
-      date: '2020-05-15',
-      important: true,
-      active: true,
-      finishDate: null,
-    },
-  ]);
+  const [state, setState] = useState(todos);
 
   const localStorageAdd = (key, result) => {
     localStorage.setItem(key, JSON.stringify(result));
@@ -86,15 +63,26 @@ const ToDoApp = () => {
   return (
     <>
       <CssBaseline />
-      <Typography variant="h4" align="center" gutterBottom>
-        Another To Do App
-      </Typography>
-      <AddTask addSingleTask={addSingleTask} />
-      <TaskList
-        taskList={state}
-        deleteTask={handleDeleteTask}
-        changeActive={handleChangeActive}
-      />
+      <Container maxWidth="lg">
+        <Header />
+        <Grid
+          spacing={1}
+          container
+          direction="column"
+          justify="flex-start"
+          alignItems="center"
+          style={{ marginTop: 15 }}
+        >
+          <AddTask addSingleTask={addSingleTask} />
+          <TaskList
+            taskList={state}
+            deleteTask={handleDeleteTask}
+            changeActive={handleChangeActive}
+          />
+        </Grid>
+
+        <Footer />
+      </Container>
     </>
   );
 };
