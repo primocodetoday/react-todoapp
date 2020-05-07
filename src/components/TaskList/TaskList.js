@@ -1,42 +1,43 @@
 ﻿import React from 'react';
 import PropTypes from 'prop-types';
-import Task from './Task/Task';
+import Task from '../Task/Task';
 import styles from './TaskList.module.scss';
 
 const TaskList = ({ taskList, changeActive, deleteTask }) => {
-  const activeTasks = taskList.filter((task) => task.active);
-  const doneTasks = taskList.filter((task) => !task.active);
+  const activeList = taskList
+    .sort((a, b) => {
+      a = a.text.toLowerCase();
+      b = b.text.toLowerCase();
+      if (a < b) return -1;
+      if (a > b) return 1;
+      return 0;
+    })
+    .filter((task) => task.active)
+    .map((task) => (
+      <Task
+        key={task.id}
+        item={task}
+        changeActive={changeActive}
+        deleteTask={deleteTask}
+      />
+    ));
 
-  activeTasks.sort((a, b) => {
-    a = a.text.toLowerCase();
-    b = b.text.toLowerCase();
-    if (a < b) return -1;
-    if (a > b) return 1;
-    return 0;
-  });
-  doneTasks.sort((a, b) => b.finishDate - a.finishDate);
-
-  const activeList = activeTasks.map((task) => (
-    <Task
-      key={task.id}
-      item={task}
-      changeActive={changeActive}
-      deleteTask={deleteTask}
-    />
-  ));
-
-  const doneList = doneTasks.map((task) => (
-    <Task
-      key={task.id}
-      item={task}
-      deleteTask={deleteTask}
-      changeActive={changeActive}
-    />
-  ));
+  const doneList = taskList
+    .filter((task) => !task.active)
+    .sort((a, b) => b.finishDate - a.finishDate)
+    .map((task) => (
+      <Task
+        key={task.id}
+        item={task}
+        deleteTask={deleteTask}
+        changeActive={changeActive}
+      />
+    ));
 
   return (
     <div className={styles.taskListwrapper}>
       <div className={styles.todolist}>
+        <div className={styles.line}> </div>
         <h4>Tasks to be done ({activeList.length})</h4>
         {activeList.length > 0 ? (
           activeList
@@ -44,7 +45,7 @@ const TaskList = ({ taskList, changeActive, deleteTask }) => {
           <p>Nothing to do. Go for coffee.</p>
         )}
       </div>
-      <div className={styles.dotted}>...</div>
+      <div className={styles.line}> </div>
       <div className={styles.doneList}>
         <h4>Tasks done ({doneList.length})</h4>
         {doneList.length > 5 && (

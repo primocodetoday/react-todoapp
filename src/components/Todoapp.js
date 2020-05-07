@@ -2,41 +2,17 @@
 import AddTask from './AddTask/AddTask';
 import styles from './ToDoApp.module.scss';
 import TaskList from './TaskList/TaskList';
+import startData from './store';
 
 const ToDoApp = () => {
-  const [state, setState] = useState([
-    {
-      id: 1,
-      text: 'React Redux Practice',
-      date: '2020-05-05',
-      important: false,
-      active: true,
-      finishDate: null,
-    },
-    {
-      id: 2,
-      text: 'Vue Routing',
-      date: '2020-05-10',
-      important: false,
-      active: true,
-      finishDate: null,
-    },
-    {
-      id: 3,
-      text: 'Finish portfolio',
-      date: '2020-05-15',
-      important: true,
-      active: true,
-      finishDate: null,
-    },
-  ]);
+  const [itemList, setItemList] = useState(startData);
 
   const localStorageAdd = (key, result) => {
     localStorage.setItem(key, JSON.stringify(result));
   };
 
   const handleChangeActive = (id) => {
-    const prevState = [...state];
+    const prevState = [...itemList];
     prevState.map((task) => {
       if (task.id === id) {
         task.active = false;
@@ -44,28 +20,28 @@ const ToDoApp = () => {
       }
       return true;
     });
-    setState(() => prevState);
+    setItemList(() => prevState);
     localStorageAdd('data', prevState);
   };
 
   const handleDeleteTask = (id) => {
-    const prevState = [...state];
+    const prevState = [...itemList];
     const result = prevState.filter((task) => task.id !== id);
     // zwraca wszystkie elementy które mają różne Id od przekazanego
-    setState(() => result);
+    setItemList(() => result);
     localStorageAdd('data', result);
   };
 
   const addSingleTask = (text, date, important) => {
     const newTask = {
-      id: state.length + 2,
+      id: itemList.length + 2,
       text,
       date,
       important,
       active: true,
       finishDate: null,
     };
-    setState((prevState) => {
+    setItemList((prevState) => {
       const result = [...prevState, newTask];
       localStorageAdd('data', result);
       return result;
@@ -78,18 +54,19 @@ const ToDoApp = () => {
   useEffect(() => {
     const localStorageDrive = localStorage.getItem('data');
     if (localStorageDrive) {
-      if (localStorageDrive !== JSON.stringify(state)) {
-        setState(JSON.parse(localStorageDrive));
+      if (localStorageDrive !== JSON.stringify(itemList)) {
+        setItemList(JSON.parse(localStorageDrive));
       }
-    } else localStorageAdd('data', state);
-  }, [state]);
+    }
+    localStorageAdd('data', itemList);
+  }, [itemList]);
 
   return (
     <div className={styles.mainWrapper}>
-      <h2 className={styles.title}>Another To Do App</h2>
+      <h2 className={styles.appTitle}>Another To Do App</h2>
       <AddTask addSingleTask={addSingleTask} />
       <TaskList
-        taskList={state}
+        taskList={itemList}
         deleteTask={handleDeleteTask}
         changeActive={handleChangeActive}
       />
