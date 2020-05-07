@@ -8,7 +8,7 @@
 
 <h2 align="center">To do App</h2>
 
-<h3 align="center">To do App with Material-UI</h3>
+<h3 align="center">Another boring to do app</h3>
 
 <!-- <p align="center">
   <a >
