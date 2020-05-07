@@ -4,6 +4,7 @@ import styles from './AddTask.module.scss';
 
 const AddTask = ({ addSingleTask }) => {
   const minDate = new Date().toISOString().slice(0, 10);
+
   let maxDate = minDate.slice(0, 4) * 1 + 1;
   maxDate += '-12-31';
 
@@ -34,7 +35,7 @@ const AddTask = ({ addSingleTask }) => {
     });
   };
 
-  const handleClick = () => {
+  const handleAdd = () => {
     const { text, date, checked } = formState;
     if (text.length > 2) {
       const add = addSingleTask(text, date, checked);
@@ -51,38 +52,41 @@ const AddTask = ({ addSingleTask }) => {
 
   return (
     <div className={styles.form}>
-      <div>
-        <label htmlFor="addTask">
-          name:{' '}
-          <input
-            id="addTask"
-            type="text"
-            placeholder="Add task"
-            value={formState.text}
-            onChange={handleChangeText}
-          />
-        </label>
-        <input
-          type="checkbox"
-          value={formState.checked}
-          id="important"
-          onChange={handleChangeCheckbox}
-        />
-        <label htmlFor="important">Important</label>
-      </div>
-      <div>
-        <label htmlFor="date">until:</label>
-        <input
-          type="date"
-          value={formState.date}
-          min={minDate}
-          max={maxDate}
-          onChange={handleChangeDate}
-        />
-        <button type="button" onClick={handleClick}>
-          Add
-        </button>
-      </div>
+      <label className={styles.item1} htmlFor="addTask">
+        name:
+      </label>
+      <input
+        className={styles.item2}
+        id="addTask"
+        type="text"
+        placeholder="Add task"
+        value={formState.text}
+        onChange={handleChangeText}
+      />
+      <input
+        className={styles.item3}
+        type="checkbox"
+        value={formState.checked}
+        id="important"
+        onChange={handleChangeCheckbox}
+      />
+      <label className={styles.item4} htmlFor="important">
+        Important
+      </label>
+      <label className={styles.item5} htmlFor="date">
+        until:
+      </label>
+      <input
+        className={styles.item6}
+        type="date"
+        value={formState.date}
+        min={minDate}
+        max={maxDate}
+        onChange={handleChangeDate}
+      />
+      <button className={styles.item7} type="button" onClick={handleAdd}>
+        Add
+      </button>
     </div>
   );
 };

@@ -20,7 +20,7 @@ const Task = ({ item, changeActive, deleteTask }) => {
         }
         className={styles.taskText}
       >
-        {important ? `${text} !!!` : text}
+        {text}
       </p>
       <p className={styles.taskDate}>
         {finish !== '1.01.1970' ? finish : date}
