@@ -55,6 +55,6 @@
 
 ### Live 📍
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8af0f95f-6546-4192-b858-ba6ffcb01cbd/deploy-status)](https://primoza.netlify.app/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7b84f7eb-a552-483f-944c-46d5ebd5fbc5/deploy-status)](https://app.netlify.com/sites/zen-yalow-26ba82/deploys)
 
 ### License 🔱
