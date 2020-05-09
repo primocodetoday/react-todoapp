@@ -17,7 +17,7 @@
   },
   {
     id: 3,
-    text: 'Finish portfolio',
+    text: 'Refactor Weather App',
     date: '2020-05-15',
     important: true,
     active: true,

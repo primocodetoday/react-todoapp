@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+﻿import React, { useState } from 'react';
 import AddTask from './AddTask/AddTask';
 import styles from './ToDoApp.module.scss';
 import TaskList from './TaskList/TaskList';
@@ -6,10 +6,6 @@ import startData from './store';
 
 const ToDoApp = () => {
   const [itemList, setItemList] = useState(startData);
-
-  const localStorageAdd = (key, result) => {
-    localStorage.setItem(key, JSON.stringify(result));
-  };
 
   const handleChangeActive = (id) => {
     const prevState = [...itemList];
@@ -21,7 +17,6 @@ const ToDoApp = () => {
       return true;
     });
     setItemList(() => prevState);
-    localStorageAdd('data', prevState);
   };
 
   const handleDeleteTask = (id) => {
@@ -29,7 +24,6 @@ const ToDoApp = () => {
     const result = prevState.filter((task) => task.id !== id);
     // zwraca wszystkie elementy które mają różne Id od przekazanego
     setItemList(() => result);
-    localStorageAdd('data', result);
   };
 
   const addSingleTask = (text, date, important) => {
@@ -43,23 +37,11 @@ const ToDoApp = () => {
     };
     setItemList((prevState) => {
       const result = [...prevState, newTask];
-      localStorageAdd('data', result);
       return result;
     });
     // sprawdzaj jakie dane masz w state. Używamy {} lub []
     return true;
   };
-
-  // sync with localStorage
-  useEffect(() => {
-    const localStorageDrive = localStorage.getItem('data');
-    if (localStorageDrive) {
-      if (localStorageDrive !== JSON.stringify(itemList)) {
-        setItemList(JSON.parse(localStorageDrive));
-      }
-    }
-    localStorageAdd('data', itemList);
-  }, [itemList]);
 
   return (
     <div className={styles.mainWrapper}>
