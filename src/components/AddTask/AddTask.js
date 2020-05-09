@@ -84,7 +84,7 @@ const AddTask = ({ addSingleTask }) => {
         max={maxDate}
         onChange={handleChangeDate}
       />
-      <button className={styles.item7} type="button" onClick={handleAdd}>
+      <button type="button" className={styles.item7} onClick={handleAdd}>
         Add
       </button>
     </div>

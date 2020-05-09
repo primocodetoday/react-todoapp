@@ -8,7 +8,7 @@
 
 <h2 align="center">To do App</h2>
 
-<h3 align="center">To do App with Material-UI</h3>
+<!-- <h3 align="center">To do App with Material-UI</h3> -->
 
 <!-- <p align="center">
   <a >
@@ -22,11 +22,11 @@
 <br>
 <br>
 
-### Tech/framework used 🔧
+### Tech 🔧
 
-| Tech                                                             |
-| ---------------------------------------------------------------- |
-| [Create React App](https://github.com/facebook/create-react-app) |
+| Tech                                                             | Styles                  | Code                  |
+| ---------------------------------------------------------------- | ----------------------- | --------------------- |
+| [Create React App](https://github.com/facebook/create-react-app) | CSS Modules, Flex, Grid | ES6, Hooks, PropTypes |
 
 <!-- ## Screenshots 📺
 
@@ -55,6 +55,6 @@
 
 ### Live 📍
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7b84f7eb-a552-483f-944c-46d5ebd5fbc5/deploy-status)](https://app.netlify.com/sites/zen-yalow-26ba82/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7b84f7eb-a552-483f-944c-46d5ebd5fbc5/deploy-status)](https://zen-yalow-26ba82.netlify.app)
 
 ### License 🔱

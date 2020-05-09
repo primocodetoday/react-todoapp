@@ -35,8 +35,8 @@ const TaskList = ({ taskList, changeActive, deleteTask }) => {
     ));
 
   return (
-    <div className={styles.taskListwrapper}>
-      <div className={styles.todolist}>
+    <div className={styles.wrapper}>
+      <div className={styles.todoList}>
         <div className={styles.line}> </div>
         <h4>Tasks to be done ({activeList.length})</h4>
         {activeList.length > 0 ? (
