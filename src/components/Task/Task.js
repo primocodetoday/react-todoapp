@@ -8,12 +8,12 @@ const Task = ({ item, changeActive, deleteTask }) => {
   const finish = new Date(finishDate).toLocaleDateString();
 
   return (
-    <div className={styles.singleTask}>
+    <div className={styles.task}>
       <p
         style={
           important
             ? {
-                color: '#7700ff',
+                color: 'orange',
                 fontWeight: '700',
               }
             : null
