@@ -24,9 +24,10 @@
 
 ### Tech 🔧
 
-| Tech                                                             | Styles                  | Code                  |
-| ---------------------------------------------------------------- | ----------------------- | --------------------- |
-| [Create React App](https://github.com/facebook/create-react-app) | CSS Modules, Flex, Grid | ES6, Hooks, PropTypes |
+| Main Tech | React                                 |
+| --------- | ------------------------------------- |
+| Styles    | CSS Modules, Flex, Grid               |
+| Code      | ES6, Hooks, PropTypes, Linter(airbnb) |
 
 <!-- ## Screenshots 📺
 
@@ -55,6 +56,6 @@
 
 ### Live 📍
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7b84f7eb-a552-483f-944c-46d5ebd5fbc5/deploy-status)](https://zen-yalow-26ba82.netlify.app)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7b84f7eb-a552-483f-944c-46d5ebd5fbc5/deploy-status)](https://zen-yalow-26ba82.netlify.app/)
 
-### License 🔱
+<!-- ### License 🔱 -->
