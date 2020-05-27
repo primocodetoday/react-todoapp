@@ -1,4 +1,4 @@
-﻿const startData = [
+﻿const store = [
   {
     id: 1,
     text: 'React Redux Practice',
@@ -25,4 +25,4 @@
   },
 ];
 
-export default startData;
+export default store;

@@ -1,10 +1,10 @@
 ﻿import React, { useState } from 'react';
 import AddTask from './AddTask/AddTask';
 import TaskList from './TaskList/TaskList';
-import startData from './store';
+import store from './store';
 
 const ToDoApp = () => {
-  const [itemList, setItemList] = useState(startData);
+  const [itemList, setItemList] = useState(store);
 
   const handleChangeActive = (id) => {
     const prevState = [...itemList];
