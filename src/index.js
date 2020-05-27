@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import ToDoApp from './components/Todoapp';
+import 'bulma';
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,6 +1,5 @@
 ﻿import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import styles from './AddTask.module.scss';
 
 const AddTask = ({ addSingleTask }) => {
   const minDate = new Date().toISOString().slice(0, 10);
@@ -51,12 +50,12 @@ const AddTask = ({ addSingleTask }) => {
   };
 
   return (
-    <div className={styles.form}>
-      <label className={styles.item1} htmlFor="addTask">
+    <form className="field section box">
+      <label className="label" htmlFor="addTask">
         name:
       </label>
       <input
-        className={styles.item2}
+        className="input"
         id="addTask"
         type="text"
         placeholder="Add task"
@@ -64,30 +63,30 @@ const AddTask = ({ addSingleTask }) => {
         onChange={handleChangeText}
       />
       <input
-        className={styles.item3}
+        className="checkbox"
         type="checkbox"
         value={formState.checked}
         id="important"
         onChange={handleChangeCheckbox}
       />
-      <label className={styles.item4} htmlFor="important">
+      <label className="checkbox" htmlFor="important">
         Important
       </label>
-      <label className={styles.item5} htmlFor="date">
+      <label className="label" htmlFor="date">
         until:
       </label>
       <input
-        className={styles.item6}
+        className="input"
         type="date"
         value={formState.date}
         min={minDate}
         max={maxDate}
         onChange={handleChangeDate}
       />
-      <button type="button" className={styles.item7} onClick={handleAdd}>
+      <button type="button" className="button is-link" onClick={handleAdd}>
         Add
       </button>
-    </div>
+    </form>
   );
 };
 

@@ -1,6 +1,5 @@
 ﻿import React, { useState } from 'react';
 import AddTask from './AddTask/AddTask';
-import styles from './ToDoApp.module.scss';
 import TaskList from './TaskList/TaskList';
 import startData from './store';
 
@@ -44,8 +43,10 @@ const ToDoApp = () => {
   };
 
   return (
-    <div className={styles.mainWrapper}>
-      <h2 className={styles.appTitle}>Another To Do App</h2>
+    <div className="container">
+      <div>
+        <h4 className="title is-4 has-text-centered">Another To Do App</h4>
+      </div>
       <AddTask addSingleTask={addSingleTask} />
       <TaskList
         taskList={itemList}
