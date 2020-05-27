@@ -1,11 +1,14 @@
-body {
-  margin: 5;
-  font-family: 'Roboto', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: rgb(70, 172, 158);
+  min-height: 100vh;
+}
+
+.container {
+  padding: 20px 0;
 }

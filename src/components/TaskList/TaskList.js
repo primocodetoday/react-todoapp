@@ -1,7 +1,6 @@
 ﻿import React from 'react';
 import PropTypes from 'prop-types';
 import Task from '../Task/Task';
-import styles from './TaskList.module.scss';
 
 const TaskList = ({ taskList, changeActive, deleteTask }) => {
   const activeList = taskList
@@ -35,19 +34,24 @@ const TaskList = ({ taskList, changeActive, deleteTask }) => {
     ));
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.todoList}>
-        <div className={styles.line}> </div>
-        <h4>Tasks to be done ({activeList.length})</h4>
+    <div className="container box">
+      <h4 className="title is-4 has-text-centered">
+        Tasks to be done ({activeList.length})
+      </h4>
+
+      <div className="tile is-ancestor">
         {activeList.length > 0 ? (
           activeList
         ) : (
           <p>Nothing to do. Go for coffee.</p>
         )}
       </div>
-      <div className={styles.line}> </div>
-      <div className={styles.doneList}>
-        <h4>Tasks done ({doneList.length})</h4>
+
+      <h4 className="title is-4 has-text-centered">
+        Tasks done ({doneList.length})
+      </h4>
+
+      <div className="tile is-ancestor">
         {doneList.length > 5 && (
           <p>The list contains the last 5 completed tasks</p>
         )}

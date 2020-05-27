@@ -1,6 +1,5 @@
 ﻿import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import styles from './AddTask.module.scss';
 
 const AddTask = ({ addSingleTask }) => {
   const minDate = new Date().toISOString().slice(0, 10);
@@ -51,43 +50,62 @@ const AddTask = ({ addSingleTask }) => {
   };
 
   return (
-    <div className={styles.form}>
-      <label className={styles.item1} htmlFor="addTask">
-        name:
-      </label>
-      <input
-        className={styles.item2}
-        id="addTask"
-        type="text"
-        placeholder="Add task"
-        value={formState.text}
-        onChange={handleChangeText}
-      />
-      <input
-        className={styles.item3}
-        type="checkbox"
-        value={formState.checked}
-        id="important"
-        onChange={handleChangeCheckbox}
-      />
-      <label className={styles.item4} htmlFor="important">
-        Important
-      </label>
-      <label className={styles.item5} htmlFor="date">
-        until:
-      </label>
-      <input
-        className={styles.item6}
-        type="date"
-        value={formState.date}
-        min={minDate}
-        max={maxDate}
-        onChange={handleChangeDate}
-      />
-      <button type="button" className={styles.item7} onClick={handleAdd}>
-        Add
-      </button>
-    </div>
+    <form className="box">
+      <div className="columns is-vcentered">
+        <div className="field column is-two-fifths">
+          <label className="label" htmlFor="addTask">
+            Task name:
+          </label>
+          <div className="control">
+            <input
+              className="input"
+              id="addTask"
+              type="text"
+              placeholder="30 push ups"
+              value={formState.text}
+              onChange={handleChangeText}
+            />
+          </div>
+        </div>
+        <div className="field column is-two-fifths">
+          <label className="label" htmlFor="date">
+            Until:
+          </label>
+          <div className="control">
+            <input
+              className="input"
+              type="date"
+              value={formState.date}
+              min={minDate}
+              max={maxDate}
+              onChange={handleChangeDate}
+            />
+          </div>
+        </div>
+        <div className="field column">
+          <div className="control has-text-centered">
+            <label className="checkbox" htmlFor="important">
+              <input
+                type="checkbox"
+                value={formState.checked}
+                id="important"
+                onChange={handleChangeCheckbox}
+              />
+              <p>Important</p>
+            </label>
+          </div>
+        </div>
+        <div className="field column has-text-centered">
+          <button
+            type="button"
+            className="button is-primary is-outlined"
+            onClick={handleAdd}
+          >
+            Add Task
+          </button>
+        </div>
+      </div>
+    </form>
   );
 };
 
