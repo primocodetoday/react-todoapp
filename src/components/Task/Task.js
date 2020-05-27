@@ -9,29 +9,33 @@ const Task = ({ item, changeActive, deleteTask }) => {
   return (
     <div className="tile is-parent">
       <div className="tile is-child notification is-primary">
-        <p
+        <h5
+          className="title is-5"
           style={
             important
               ? {
-                  color: 'orange',
                   fontWeight: '700',
                 }
               : null
           }
         >
           {text}
-        </p>
-        <p>{finish !== '1.01.1970' ? finish : date}</p>
+        </h5>
+        <p className="content">{finish !== '1.01.1970' ? finish : date}</p>
         {active && (
           <button
             type="button"
             onClick={() => changeActive(id)}
-            className="button is-link"
+            className="button has-text-primary"
           >
             Done
           </button>
         )}
-        <button type="button" onClick={() => deleteTask(id)} className="delete">
+        <button
+          type="button"
+          onClick={() => deleteTask(id)}
+          className="delete is-large "
+        >
           Delete
         </button>
       </div>

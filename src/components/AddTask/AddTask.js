@@ -50,42 +50,61 @@ const AddTask = ({ addSingleTask }) => {
   };
 
   return (
-    <form className="field section box">
-      <label className="label" htmlFor="addTask">
-        name:
-      </label>
-      <input
-        className="input"
-        id="addTask"
-        type="text"
-        placeholder="Add task"
-        value={formState.text}
-        onChange={handleChangeText}
-      />
-      <input
-        className="checkbox"
-        type="checkbox"
-        value={formState.checked}
-        id="important"
-        onChange={handleChangeCheckbox}
-      />
-      <label className="checkbox" htmlFor="important">
-        Important
-      </label>
-      <label className="label" htmlFor="date">
-        until:
-      </label>
-      <input
-        className="input"
-        type="date"
-        value={formState.date}
-        min={minDate}
-        max={maxDate}
-        onChange={handleChangeDate}
-      />
-      <button type="button" className="button is-link" onClick={handleAdd}>
-        Add
-      </button>
+    <form className="box">
+      <div className="columns is-vcentered">
+        <div className="field column is-two-fifths">
+          <label className="label" htmlFor="addTask">
+            Task name:
+          </label>
+          <div className="control">
+            <input
+              className="input"
+              id="addTask"
+              type="text"
+              placeholder="30 push ups"
+              value={formState.text}
+              onChange={handleChangeText}
+            />
+          </div>
+        </div>
+        <div className="field column is-two-fifths">
+          <label className="label" htmlFor="date">
+            Until:
+          </label>
+          <div className="control">
+            <input
+              className="input"
+              type="date"
+              value={formState.date}
+              min={minDate}
+              max={maxDate}
+              onChange={handleChangeDate}
+            />
+          </div>
+        </div>
+        <div className="field column">
+          <div className="control has-text-centered">
+            <label className="checkbox" htmlFor="important">
+              <input
+                type="checkbox"
+                value={formState.checked}
+                id="important"
+                onChange={handleChangeCheckbox}
+              />
+              <p>Important</p>
+            </label>
+          </div>
+        </div>
+        <div className="field column has-text-centered">
+          <button
+            type="button"
+            className="button is-primary is-outlined"
+            onClick={handleAdd}
+          >
+            Add Task
+          </button>
+        </div>
+      </div>
     </form>
   );
 };

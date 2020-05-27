@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import ToDoApp from './components/Todoapp';
+import ToDoApp from './components/ToDoApp';
 import 'bulma';
 
 ReactDOM.render(

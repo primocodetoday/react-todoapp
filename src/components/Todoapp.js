@@ -38,15 +38,14 @@ const ToDoApp = () => {
       const result = [...prevState, newTask];
       return result;
     });
-    // sprawdzaj jakie dane masz w state. Używamy {} lub []
     return true;
   };
 
   return (
     <div className="container">
-      <div>
-        <h4 className="title is-4 has-text-centered">Another To Do App</h4>
-      </div>
+      <header className="box">
+        <h3 className="title is-3 has-text-centered">Another To Do App</h3>
+      </header>
       <AddTask addSingleTask={addSingleTask} />
       <TaskList
         taskList={itemList}

@@ -26,7 +26,7 @@
 
 | Main Tech | React                                 |
 | --------- | ------------------------------------- |
-| Styles    | CSS Modules, Flex, Grid               |
+| Styles    | Bulma                                 |
 | Code      | ES6, Hooks, PropTypes, Linter(airbnb) |
 
 <!-- ## Screenshots 📺

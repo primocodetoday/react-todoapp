@@ -3,3 +3,12 @@
 *::after {
   box-sizing: border-box;
 }
+
+body {
+  background-color: rgb(70, 172, 158);
+  min-height: 100vh;
+}
+
+.container {
+  padding: 20px 0;
+}
