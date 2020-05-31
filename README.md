@@ -56,6 +56,6 @@
 
 ### Live 📍
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7b84f7eb-a552-483f-944c-46d5ebd5fbc5/deploy-status)](https://zen-yalow-26ba82.netlify.app/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7b84f7eb-a552-483f-944c-46d5ebd5fbc5/deploy-status)](https://tda-primo-react.netlify.app/)
 
 <!-- ### License 🔱 -->
