@@ -52,6 +52,16 @@ const ToDoApp = () => {
         deleteTask={handleDeleteTask}
         changeActive={handleChangeActive}
       />
+      <div style={{ textAlign: 'center' }}>
+        <a href="https://bulma.io">
+          <img
+            src="https://bulma.io/images/made-with-bulma.png"
+            alt="Made with Bulma"
+            width="256"
+            height="48"
+          />
+        </a>
+      </div>
     </div>
   );
 };

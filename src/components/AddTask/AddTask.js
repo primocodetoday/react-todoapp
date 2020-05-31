@@ -85,14 +85,14 @@ const AddTask = ({ addSingleTask }) => {
         <div className="field column">
           <div className="control has-text-centered">
             <label className="checkbox" htmlFor="important">
-              <input
-                type="checkbox"
-                value={formState.checked}
-                id="important"
-                onChange={handleChangeCheckbox}
-              />
-              <p>Important</p>
+              Important
             </label>
+            <input
+              type="checkbox"
+              value={formState.checked}
+              id="important"
+              onChange={handleChangeCheckbox}
+            />
           </div>
         </div>
         <div className="field column has-text-centered">
